@@ -15,14 +15,12 @@
             $query = "SELECT * FROM sinhvien2 WHERE Msv = $id";
             $result = mysqli_query($conn, $query);
 
-            while ($row = $result->fetch_assoc()) {
-                if(count((array)($result==1))) {
+            if(count((array)($result==1))) {
                     $row = $result->fetch_array();
                     $msv = $row['Msv'];
                     $hoten = $row['Hoten'];
                     $lop = $row['Lop'];
-                };
-            }
+               };
         }
         if(isset($_POST['edit'])) {
             $msvup = $_POST['msv'];
